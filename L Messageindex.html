@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L Message(エルメ)紹介＆LINE活用セミナーSPAインフォグラフィック (緑基調・UIリッチ版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f0fdf4; color: #1f2937; }
+        .hero-bg { background: linear-gradient(135deg, #10B981 0%, #34D399 100%); } /* 緑系グラデーション */
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 350px; max-height: 450px; }
+        .small-chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 250px; max-height: 300px; }
+        .section-title { font-size: 2.5rem; line-height: 2.75rem; font-weight: 900; text-align: center; margin-bottom: 1rem; color: #065f46; } /* 濃い緑 */
+        .section-subtitle { font-size: 1.125rem; line-height: 1.75rem; text-align: center; color: #374151; max-width: 60rem; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
+        .card { background-color: white; border-radius: 0.75rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); padding: 2rem; transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .feature-card { background-color: #ECFDF5; border-left: 5px solid #10B981; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
+        .cta-button { background-color: #F59E0B; color: #1f2937; font-weight: 700; padding: 1rem 2.5rem; border-radius: 9999px; transition: all 0.3s ease-in-out; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); display: inline-block; }
+        .cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4); }
+        .benefit-icon { font-size: 3.5rem; color: #10B981; margin-bottom: 0.75rem; }
+        .annotation { font-size: 0.8rem; color: #4b5563; text-align: center; margin-top: 0.3rem; }
+        .form-input { border-width: 2px; border-color: #D1D5DB; transition: border-color 0.3s; }
+        .form-input:focus { border-color: #10B981; box-shadow: 0 0 0 3px rgba(16,185,129,0.3); outline: none; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="hero-bg text-white py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">そのLINE運用、<span class="text-yellow-300">劇的に</span>変えませんか？</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">L Message(エルメ)の力とLINE活用セミナーで、ビジネスを次のステージへ。</p>
+            <a href="#seminar-application" class="cta-button text-xl">無料セミナーに申し込む</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="lmessage-features" class="my-16 md:my-20">
+            <h2 class="section-title">L Message(エルメ)で実現する<br class="md:hidden">LINE運用の未来</h2>
+            <p class="section-subtitle">もう手作業に追われない！エルメの多彩な機能が、あなたのLINE公式アカウントを最強のマーケティングツールに変えます。<br><span class="annotation">※以下に記載の効果は説明のための目標値または期待される効果の一例です。</span></p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card">
+                    <div class="benefit-icon">💬</div>
+                    <h3 class="text-xl font-bold mb-1 text-green-700">ステップ配信</h3>
+                    <p class="text-gray-700">見込み客を自動で育成。配信作業時間を<strong class="text-green-600">80%削減</strong>！</p>
+                </div>
+                <div class="feature-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="text-xl font-bold mb-1 text-green-700">セグメント配信</h3>
+                    <p class="text-gray-700">顧客に合わせた情報を配信。開封率が平均<strong class="text-green-600">1.5倍</strong>に！</p>
+                </div>
+                <div class="feature-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3 class="text-xl font-bold mb-1 text-green-700">自動応答</h3>
+                    <p class="text-gray-700">24時間365日対応。顧客満足度を<strong class="text-green-600">大幅向上</strong>。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3 class="text-xl font-bold mb-1 text-green-700">顧客管理</h3>
+                    <p class="text-gray-700">顧客情報を一元管理。データに基づいた<strong class="text-green-600">的確な施策</strong>を。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="benefit-icon">📅</div>
+                    <h3 class="text-xl font-bold mb-1 text-green-700">予約システム連携</h3>
+                    <p class="text-gray-700">予約からリマインドまで自動化。機会損失を<strong class="text-green-600">ゼロ</strong>へ。</p>
+                </div>
+                 <div class="feature-card">
+                    <div class="benefit-icon">📝</div>
+                    <h3 class="text-xl font-bold mb-1 text-green-700">フォーム作成</h3>
+                    <p class="text-gray-700">アンケートや申込フォームを簡単作成。顧客の声を<strong class="text-green-600">ダイレクト</strong>に収集。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="problem-solution" class="my-16 md:my-20">
+            <h2 class="section-title">こんなお悩み、エルメで解決！</h2>
+            <p class="section-subtitle">LINE運用の「あるある」な課題。エルメなら、スマートに解決できます。</p>
+            <div class="card">
+                <div class="space-y-10">
+                    <div class="p-6 bg-red-50 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-semibold mb-2 text-red-700">【悩み】メッセージ配信が手作業で大変…</h3>
+                        <div class="flex flex-col md:flex-row items-center">
+                            <p class="text-gray-700 flex-1 mb-2 md:mb-0">毎回の配信準備に時間がかかり、他の業務を圧迫している。</p>
+                            <div class="text-3xl mx-4 text-green-500 font-bold transform md:rotate-0 rotate-90">&rarr;</div>
+                            <p class="text-green-700 font-semibold flex-1 bg-green-100 p-3 rounded-md">【エルメで解決！】ステップ配信・予約配信で完全自動化！</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-red-50 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-semibold mb-2 text-red-700">【悩み】顧客対応に追われて他の業務ができない…</h3>
+                         <div class="flex flex-col md:flex-row items-center">
+                            <p class="text-gray-700 flex-1 mb-2 md:mb-0">問い合わせが多く、個別対応で一日が終わってしまう。</p>
+                            <div class="text-3xl mx-4 text-green-500 font-bold transform md:rotate-0 rotate-90">&rarr;</div>
+                            <p class="text-green-700 font-semibold flex-1 bg-green-100 p-3 rounded-md">【エルメで解決！】自動応答・AI応答で一次対応を自動化！</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-red-50 rounded-lg shadow-inner">
+                        <h3 class="text-xl font-semibold mb-2 text-red-700">【悩み】効果測定が難しく、改善できない…</h3>
+                        <div class="flex flex-col md:flex-row items-center">
+                            <p class="text-gray-700 flex-1 mb-2 md:mb-0">どの配信が効果的だったのか分からず、PDCAが回せない。</p>
+                            <div class="text-3xl mx-4 text-green-500 font-bold transform md:rotate-0 rotate-90">&rarr;</div>
+                            <p class="text-green-700 font-semibold flex-1 bg-green-100 p-3 rounded-md">【エルメで解決！】詳細な分析機能で効果を可視化！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="before-after" class="my-16 md:my-20">
+            <h2 class="section-title">エルメ導入で劇的変化！<br class="md:hidden">Before & After</h2>
+            <p class="section-subtitle">具体的な数値で見る、エルメ導入がもたらす業務効率と顧客エンゲージメントの向上。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center mb-6 text-gray-700">業務効率の変化</h3>
+                    <div class="small-chart-container"><canvas id="efficiencyChart"></canvas></div>
+                    <p class="annotation">※このグラフは説明のための架空の数値例です。</p>
+                    <p class="text-center text-sm text-gray-600 mt-4">手動での個別返信や配信作業にかかっていた時間が大幅に削減され、人件費の最適化とミスの削減に繋がります。</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center mb-6 text-gray-700">顧客エンゲージメントの変化</h3>
+                    <div class="small-chart-container"><canvas id="engagementChart"></canvas></div>
+                    <p class="annotation">※このグラフは説明のための架空の数値例です。</p>
+                    <p class="text-center text-sm text-gray-600 mt-4">パーソナライズされた配信により、メッセージ開封率・クリック率が向上し、ブロック率の低下とリピート顧客の増加が期待できます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies" class="my-16 md:my-20 bg-green-50 p-8 md:p-12 rounded-2xl">
+            <h2 class="section-title">エルメ導入企業様の成功事例</h2>
+            <p class="section-subtitle">多くの企業がエルメを活用し、目覚ましい成果を上げています。次はあなたの番です！<br><span class="annotation">※以下に示す成果はLPコンテンツ案の例示に基づいたものであり、個別の効果を保証するものではありません。ロゴはイメージです。</span></p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card text-center border-t-8 border-yellow-400">
+                    <img src="https://placehold.co/120x60/E5E7EB/A5AAB4?text=patternA" alt="patternA (イメージ)" class="mx-auto mb-6 h-14 object-contain">
+                    <p class="text-gray-600 text-lg font-medium">オンラインスクール運営</p>
+                    <p class="text-5xl font-black text-gray-800 my-4">売上 <span class="text-yellow-500">150%</span></p>
+                    <p class="text-lg font-semibold">前月比達成！</p>
+                    <p class="mt-3 text-sm text-gray-600">ステップ配信と個別相談の自動化で成約率が大幅アップ。</p>
+                </div>
+                <div class="card text-center border-t-8 border-green-500">
+                     <img src="https://placehold.co/120x60/E5E7EB/A5AAB4?text=patternB" alt="patternB (イメージ)" class="mx-auto mb-6 h-14 object-contain">
+                    <p class="text-gray-600 text-lg font-medium">地域密着型 飲食店</p>
+                    <p class="text-5xl font-black text-gray-800 my-4">成約率 <span class="text-green-600">20%</span></p>
+                    <p class="text-lg font-semibold">向上！</p>
+                    <p class="mt-3 text-sm text-gray-600">予約リマインドと限定クーポン配信でリピーターが増加。</p>
+                </div>
+                 <div class="card text-center border-t-8 border-teal-500">
+                     <img src="https://placehold.co/120x60/E5E7EB/A5AAB4?text=patternC" alt="patternC (イメージ)" class="mx-auto mb-6 h-14 object-contain">
+                    <p class="text-gray-600 text-lg font-medium">BtoBサービス提供企業</p>
+                    <p class="text-5xl font-black text-gray-800 my-4">リード獲得 <span class="text-teal-600">2.5倍</span></p>
+                    <p class="text-lg font-semibold">を実現！</p>
+                    <p class="mt-3 text-sm text-gray-600">ウェビナー集客とフォローアップを自動化し、商談化数が向上。</p>
+                </div>
+            </div>
+             <p class="text-center mt-10"><a href="https://lme.jp/manual/category/case-studies/" target="_blank" class="text-green-600 hover:text-green-700 underline font-semibold text-lg">さらに多くの導入事例を見る &rarr;</a></p>
+        </section>
+
+        <section id="seminar-info" class="my-16 md:my-20">
+            <h2 class="section-title">LINE活用セミナーで未来を掴む</h2>
+            <p class="section-subtitle">なぜ今、このセミナーに参加すべきなのか？その理由を明確にお伝えします。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center mb-6 text-gray-700">LINE市場の現状と自動化の必要性</h3>
+                    <div class="small-chart-container"><canvas id="marketTrendChart"></canvas></div>
+                    <p class="annotation">※このグラフは一般的な市場トレンドのイメージであり、特定の調査データに基づくものではありません。</p>
+                    <p class="text-center text-sm text-gray-600 mt-4">LINEの利用者数は増加の一途を辿り、ビジネス活用も一般化。しかし、その中で成果を出すには「自動化」による効率化と高度な戦略が不可欠です。</p>
+                </div>
+                <div class="card bg-yellow-50 border-yellow-400 border-l-4">
+                    <h3 class="text-xl font-bold text-center mb-6 text-yellow-700">このセミナーだけの<span class="text-yellow-600">特別な価値</span></h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="text-3xl mr-3 text-yellow-500">🌟</span><p><strong class="font-semibold">エルメ開発元</strong>だから語れる最新情報と裏技</p></li>
+                        <li class="flex items-start"><span class="text-3xl mr-3 text-yellow-500">📈</span><p><strong class="font-semibold">明日から使える</strong>具体的な成功事例と実践ノウハウ</p></li>
+                        <li class="flex items-start"><span class="text-3xl mr-3 text-yellow-500">🎁</span><p><strong class="font-semibold">参加者限定</strong>の豪華特典（L Message割引など ※内容は変更になる場合があります）</p></li>
+                        <li class="flex items-start"><span class="text-3xl mr-3 text-yellow-500">🤝</span><p><strong class="font-semibold">同じ悩みを持つ</strong>経営者仲間とのネットワーキング機会</p></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mb-12">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-700">セミナーであなたはこう変わる！</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-4">
+                        <div class="benefit-icon">💡</div>
+                        <h4 class="text-xl font-semibold mb-2 text-green-700">戦略的思考が身につく</h4>
+                        <p class="text-sm text-gray-600">効果的なステップ配信の作り方、高反応メッセージの秘訣を習得。</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="benefit-icon">🚀</div>
+                        <h4 class="text-xl font-semibold mb-2 text-green-700">業務効率が飛躍的に向上</h4>
+                        <p class="text-sm text-gray-600">顧客データを活用したセグメント配信術で、無駄な作業を削減。</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="benefit-icon">💰</div>
+                        <h4 class="text-xl font-semibold mb-2 text-green-700">売上アップを実現</h4>
+                        <p class="text-sm text-gray-600">LINE経由の売上を最大化する具体的なノウハウを体得。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div class="card">
+                    <h3 class="text-xl font-bold text-center mb-6 text-gray-700">過去参加者の声・満足度</h3>
+                    <div class="small-chart-container mx-auto mb-4"><canvas id="satisfactionChart"></canvas></div>
+                    <p class="annotation">※このグラフは期待される満足度の一例を示すものであり、実際のアンケート結果ではありません。</p>
+                    <p class="text-center font-semibold text-lg mb-2 text-gray-800">「実践的で分かりやすかった！」</p>
+                    <p class="text-sm text-gray-600 text-center">"セミナーで学んだ方法を実践し、1ヶ月で友だち登録数が3倍になりました！" (飲食店経営者・体験談例)</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center mb-6 text-gray-700">こんな方におすすめです！</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg"><span class="text-green-500 text-3xl mr-3 font-bold">✓</span> LINEの成果を本気で出したい経営者・個人事業主</li>
+                        <li class="flex items-center text-lg"><span class="text-green-500 text-3xl mr-3 font-bold">✓</span> L Messageの具体的な活用法を学びたい方</li>
+                        <li class="flex items-center text-lg"><span class="text-green-500 text-3xl mr-3 font-bold">✓</span> 集客・販促・業務効率化に課題を感じている方</li>
+                        <li class="flex items-center text-lg"><span class="text-green-500 text-3xl mr-3 font-bold">✓</span> 少ないリソースで大きな成果を出したい方</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="seminar-application" class="my-16 md:my-20 bg-white rounded-2xl shadow-2xl p-8 md:p-16">
+            <h2 class="section-title">無料セミナーお申込み</h2>
+            <p class="section-subtitle">限定特典あり！今すぐお席を確保し、LINE活用のプロフェッショナルへの第一歩を踏み出しましょう。</p>
+            <form action="#" method="POST" class="max-w-lg mx-auto">
+                <div class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">お名前<span class="text-red-500">*</span></label>
+                        <input type="text" name="name" id="name" required class="form-input mt-1 block w-full px-4 py-3 bg-white border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 text-lg">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">メールアドレス<span class="text-red-500">*</span></label>
+                        <input type="email" name="email" id="email" required class="form-input mt-1 block w-full px-4 py-3 bg-white border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 text-lg">
+                    </div>
+                     <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">会社名・屋号</label>
+                        <input type="text" name="company" id="company" class="form-input mt-1 block w-full px-4 py-3 bg-white border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 text-lg">
+                    </div>
+                    <div class="text-center pt-4">
+                        <button type="submit" class="cta-button text-xl">
+                            無料でセミナーに申し込む
+                        </button>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-6 text-center">※お申込み後、セミナー参加用のZoom URLをメールでお送りします。無理な勧誘は一切ございません。</p>
+            </form>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-3 font-semibold text-lg">主催：株式会社ミショナ</p>
+            <div class="space-x-6 mb-6">
+                <a href="https://lme.jp/" target="_blank" class="hover:text-yellow-300 transition-colors">L Message公式サイト</a>
+                <a href="https://lme.jp/manual/" target="_blank" class="hover:text-yellow-300 transition-colors">L Messageマニュアル</a>
+                <a href="https://missiona.co/" target="_blank" class="hover:text-yellow-300 transition-colors">株式会社ミショナ</a>
+            </div>
+            <p class="text-sm text-gray-400">Copyright &copy; MISHONA Inc. All Rights Reserved.</p>
+            <p class="text-xs text-gray-500 mt-3">LINE配信文で本LPのインフォグラフィックを活用する際は、各セクションの主要なグラフや図をキャプチャし、簡潔なキャッチコピーと共に画像として添付すると効果的です。</p>
+        </div>
+    </footer>
+
+<script>
+    const commonTooltipCallback = {
+        title: function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) { return label.join(' '); }
+            return label;
+        }
+    };
+
+    const commonChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { 
+                position: 'bottom',
+                labels: { color: '#374151', font: { size: 12 } } 
+            },
+            tooltip: { 
+                callbacks: commonTooltipCallback,
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                titleFont: { size: 14 },
+                bodyFont: { size: 12 },
+                padding: 10
+            }
+        },
+        scales: {
+            x: { ticks: { color: '#4B5563' }, grid: { display: false } },
+            y: { ticks: { color: '#4B5563' }, grid: { color: '#E5E7EB' } }
+        }
+    };
+    
+    const greenPalette = ['#10B981', '#34D399', '#6EE7B7']; // メインの緑系
+    const accentPalette = ['#F59E0B', '#FBBF24', '#FCD34D']; // 黄色・オレンジ系アクセント
+    const neutralPalette = ['#6B7280', '#9CA3AF', '#D1D5DB']; // グレー系
+
+    const efficiencyChartCtx = document.getElementById('efficiencyChart').getContext('2d');
+    new Chart(efficiencyChartCtx, {
+        type: 'bar',
+        data: {
+            labels: ['手作業時間/月 (時間)', '関連人件費/月 (万円)', 'ミス発生率 (%)'],
+            datasets: [
+                { label: '導入前 (例)', data: [100, 30, 15], backgroundColor: accentPalette[1], borderColor: accentPalette[0], borderWidth: 2 },
+                { label: '導入後 (期待値)', data: [20, 10, 3], backgroundColor: greenPalette[1], borderColor: greenPalette[0], borderWidth: 2 }
+            ]
+        },
+        options: { ...commonChartOptions, scales: { y: { beginAtZero: true, ticks: { color: '#4B5563' } } } }
+    });
+
+    const engagementChartCtx = document.getElementById('engagementChart').getContext('2d');
+    new Chart(engagementChartCtx, {
+        type: 'line',
+        data: {
+            labels: ['導入前', '1ヶ月後', '3ヶ月後', '6ヶ月後'],
+            datasets: [
+                { label: '開封率 (%) (期待値)', data: [30, 45, 55, 65], borderColor: greenPalette[0], backgroundColor: 'rgba(16,185,129,0.1)', tension: 0.2, fill: true, pointBackgroundColor: greenPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: greenPalette[0] },
+                { label: 'クリック率 (%) (期待値)', data: [5, 10, 15, 20], borderColor: accentPalette[0], backgroundColor: 'rgba(245,158,11,0.1)', tension: 0.2, fill: true, pointBackgroundColor: accentPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: accentPalette[0]},
+                { label: 'ブロック率 (%) (期待値)', data: [10, 8, 6, 4], borderColor: neutralPalette[0], backgroundColor: 'rgba(107,114,128,0.1)', tension: 0.2, fill: false, pointBackgroundColor: neutralPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: neutralPalette[0] }
+            ]
+        },
+        options: { ...commonChartOptions, scales: { y: { beginAtZero: true, ticks: { color: '#4B5563' } } } }
+    });
+
+    const marketTrendChartCtx = document.getElementById('marketTrendChart').getContext('2d');
+    new Chart(marketTrendChartCtx, {
+        type: 'line',
+        data: {
+            labels: ['2022年', '2023年', '2024年', '2025年 (予測)'],
+            datasets: [{
+                label: 'LINE月間アクティブユーザー数 (単位: 千万人・参考値)',
+                data: [8.9, 9.2, 9.5, 9.8],
+                borderColor: greenPalette[0], fill: true, backgroundColor: 'rgba(16,185,129,0.2)', tension: 0.2, pointStyle: 'rectRot', pointRadius: 6, pointHoverRadius: 8
+            }, {
+                label: '企業のLINE公式アカウント活用率 (%) (参考値)',
+                data: [60, 68, 75, 82],
+                borderColor: accentPalette[0], fill: false, tension: 0.2, pointStyle: 'triangle', pointRadius: 6, pointHoverRadius: 8
+            }]
+        },
+        options: commonChartOptions
+    });
+
+    const satisfactionChartCtx = document.getElementById('satisfactionChart').getContext('2d');
+    new Chart(satisfactionChartCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['大変満足 (期待値)', '満足 (期待値)', '普通 (期待値)', 'やや不満 (期待値)'],
+            datasets: [{ data: [75, 23, 2, 0], backgroundColor: [greenPalette[0], greenPalette[1], greenPalette[2], accentPalette[1]], borderColor: '#f0fdf4', borderWidth: 3 }]
+        },
+        options: { ...commonChartOptions, cutout: '60%' }
