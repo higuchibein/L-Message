@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L Message(エルメ)紹介＆LINE活用セミナーSPAインフォグラフィック (緑基調・UIリッチ版)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> {/* Chart.jsの読み込みは1回だけにする */}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -264,6 +263,7 @@
     </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() { // DOMContentLoadedで囲む
     const commonTooltipCallback = {
         title: function(tooltipItems) {
             const item = tooltipItems[0];
@@ -295,60 +295,85 @@
         }
     };
     
-    const greenPalette = ['#10B981', '#34D399', '#6EE7B7']; // メインの緑系
-    const accentPalette = ['#F59E0B', '#FBBF24', '#FCD34D']; // 黄色・オレンジ系アクセント
-    const neutralPalette = ['#6B7280', '#9CA3AF', '#D1D5DB']; // グレー系
+    const greenPalette = ['#10B981', '#34D399', '#6EE7B7'];
+    const accentPalette = ['#F59E0B', '#FBBF24', '#FCD34D'];
+    const neutralPalette = ['#6B7280', '#9CA3AF', '#D1D5DB'];
 
-    const efficiencyChartCtx = document.getElementById('efficiencyChart').getContext('2d');
-    new Chart(efficiencyChartCtx, {
-        type: 'bar',
-        data: {
-            labels: ['手作業時間/月 (時間)', '関連人件費/月 (万円)', 'ミス発生率 (%)'],
-            datasets: [
-                { label: '導入前 (例)', data: [100, 30, 15], backgroundColor: accentPalette[1], borderColor: accentPalette[0], borderWidth: 2 },
-                { label: '導入後 (期待値)', data: [20, 10, 3], backgroundColor: greenPalette[1], borderColor: greenPalette[0], borderWidth: 2 }
-            ]
-        },
-        options: { ...commonChartOptions, scales: { y: { beginAtZero: true, ticks: { color: '#4B5563' } } } }
-    });
+    try { // エラーハンドリングを追加して、どのグラフで問題が起きているか特定しやすくする
+        const efficiencyChartCtx = document.getElementById('efficiencyChart');
+        if (efficiencyChartCtx) {
+            new Chart(efficiencyChartCtx.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['手作業時間/月 (時間)', '関連人件費/月 (万円)', 'ミス発生率 (%)'],
+                    datasets: [
+                        { label: '導入前 (例)', data: [100, 30, 15], backgroundColor: accentPalette[1], borderColor: accentPalette[0], borderWidth: 2 },
+                        { label: '導入後 (期待値)', data: [20, 10, 3], backgroundColor: greenPalette[1], borderColor: greenPalette[0], borderWidth: 2 }
+                    ]
+                },
+                options: { ...commonChartOptions, scales: { y: { beginAtZero: true, ticks: { color: '#4B5563' } } } }
+            });
+        } else {
+            console.error("Canvas element with ID 'efficiencyChart' not found.");
+        }
 
-    const engagementChartCtx = document.getElementById('engagementChart').getContext('2d');
-    new Chart(engagementChartCtx, {
-        type: 'line',
-        data: {
-            labels: ['導入前', '1ヶ月後', '3ヶ月後', '6ヶ月後'],
-            datasets: [
-                { label: '開封率 (%) (期待値)', data: [30, 45, 55, 65], borderColor: greenPalette[0], backgroundColor: 'rgba(16,185,129,0.1)', tension: 0.2, fill: true, pointBackgroundColor: greenPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: greenPalette[0] },
-                { label: 'クリック率 (%) (期待値)', data: [5, 10, 15, 20], borderColor: accentPalette[0], backgroundColor: 'rgba(245,158,11,0.1)', tension: 0.2, fill: true, pointBackgroundColor: accentPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: accentPalette[0]},
-                { label: 'ブロック率 (%) (期待値)', data: [10, 8, 6, 4], borderColor: neutralPalette[0], backgroundColor: 'rgba(107,114,128,0.1)', tension: 0.2, fill: false, pointBackgroundColor: neutralPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: neutralPalette[0] }
-            ]
-        },
-        options: { ...commonChartOptions, scales: { y: { beginAtZero: true, ticks: { color: '#4B5563' } } } }
-    });
+        const engagementChartCtx = document.getElementById('engagementChart');
+        if (engagementChartCtx) {
+            new Chart(engagementChartCtx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['導入前', '1ヶ月後', '3ヶ月後', '6ヶ月後'],
+                    datasets: [
+                        { label: '開封率 (%) (期待値)', data: [30, 45, 55, 65], borderColor: greenPalette[0], backgroundColor: 'rgba(16,185,129,0.1)', tension: 0.2, fill: true, pointBackgroundColor: greenPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: greenPalette[0] },
+                        { label: 'クリック率 (%) (期待値)', data: [5, 10, 15, 20], borderColor: accentPalette[0], backgroundColor: 'rgba(245,158,11,0.1)', tension: 0.2, fill: true, pointBackgroundColor: accentPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: accentPalette[0]},
+                        { label: 'ブロック率 (%) (期待値)', data: [10, 8, 6, 4], borderColor: neutralPalette[0], backgroundColor: 'rgba(107,114,128,0.1)', tension: 0.2, fill: false, pointBackgroundColor: neutralPalette[0], pointBorderColor: '#fff', pointHoverRadius: 7, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: neutralPalette[0] }
+                    ]
+                },
+                options: { ...commonChartOptions, scales: { y: { beginAtZero: true, ticks: { color: '#4B5563' } } } }
+            });
+        } else {
+            console.error("Canvas element with ID 'engagementChart' not found.");
+        }
 
-    const marketTrendChartCtx = document.getElementById('marketTrendChart').getContext('2d');
-    new Chart(marketTrendChartCtx, {
-        type: 'line',
-        data: {
-            labels: ['2022年', '2023年', '2024年', '2025年 (予測)'],
-            datasets: [{
-                label: 'LINE月間アクティブユーザー数 (単位: 千万人・参考値)',
-                data: [8.9, 9.2, 9.5, 9.8],
-                borderColor: greenPalette[0], fill: true, backgroundColor: 'rgba(16,185,129,0.2)', tension: 0.2, pointStyle: 'rectRot', pointRadius: 6, pointHoverRadius: 8
-            }, {
-                label: '企業のLINE公式アカウント活用率 (%) (参考値)',
-                data: [60, 68, 75, 82],
-                borderColor: accentPalette[0], fill: false, tension: 0.2, pointStyle: 'triangle', pointRadius: 6, pointHoverRadius: 8
-            }]
-        },
-        options: commonChartOptions
-    });
+        const marketTrendChartCtx = document.getElementById('marketTrendChart');
+        if (marketTrendChartCtx) {
+            new Chart(marketTrendChartCtx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['2022年', '2023年', '2024年', '2025年 (予測)'],
+                    datasets: [{
+                        label: 'LINE月間アクティブユーザー数 (単位: 千万人・参考値)',
+                        data: [8.9, 9.2, 9.5, 9.8],
+                        borderColor: greenPalette[0], fill: true, backgroundColor: 'rgba(16,185,129,0.2)', tension: 0.2, pointStyle: 'rectRot', pointRadius: 6, pointHoverRadius: 8
+                    }, {
+                        label: '企業のLINE公式アカウント活用率 (%) (参考値)',
+                        data: [60, 68, 75, 82],
+                        borderColor: accentPalette[0], fill: false, tension: 0.2, pointStyle: 'triangle', pointRadius: 6, pointHoverRadius: 8
+                    }]
+                },
+                options: commonChartOptions
+            });
+        } else {
+            console.error("Canvas element with ID 'marketTrendChart' not found.");
+        }
 
-    const satisfactionChartCtx = document.getElementById('satisfactionChart').getContext('2d');
-    new Chart(satisfactionChartCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['大変満足 (期待値)', '満足 (期待値)', '普通 (期待値)', 'やや不満 (期待値)'],
-            datasets: [{ data: [75, 23, 2, 0], backgroundColor: [greenPalette[0], greenPalette[1], greenPalette[2], accentPalette[1]], borderColor: '#f0fdf4', borderWidth: 3 }]
-        },
-        options: { ...commonChartOptions, cutout: '60%' }
+        const satisfactionChartCtx = document.getElementById('satisfactionChart');
+        if (satisfactionChartCtx) {
+            new Chart(satisfactionChartCtx.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['大変満足 (期待値)', '満足 (期待値)', '普通 (期待値)', 'やや不満 (期待値)'],
+                    datasets: [{ data: [75, 23, 2, 0], backgroundColor: [greenPalette[0], greenPalette[1], greenPalette[2], accentPalette[1]], borderColor: '#f0fdf4', borderWidth: 3 }]
+                },
+                options: { ...commonChartOptions, cutout: '60%' }
+            });
+        } else {
+            console.error("Canvas element with ID 'satisfactionChart' not found.");
+        }
+    } catch (e) {
+        console.error("An error occurred while initializing charts:", e);
+    }
+});
+</script>
+</body>
+</html>
